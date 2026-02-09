@@ -18,6 +18,15 @@
 | Indian Robo Store | indianrobostore.com | Motors, chargers |
 | Aerokart India | aerokartindia.in | Frames, batteries |
 | Robodo | robodo.in | Batteries, Arduino, Pixhawk |
+| XBOOM | xboom.in | Drone parachutes, winch systems, payloads |
+| Fab.to.Lab | fabtolab.com | RAK LoRa modules, Nooelec SDR/LNA |
+| Prayog India | prayogindia.in | BLHeli ESCs, FPV parts |
+| RC Hyderabad | rchyderabad.com | Parachutes, RC parts |
+| FlySpark | flyspark.in | Fiber-optic drone tethering systems |
+| Flyrobo | flyrobo.in | Racing motors, FPV components |
+| REES52 | rees52.com | Pi cameras, sensors, breakout boards |
+| Probots | probots.co.in | Matek FC, optical flow sensors |
+| DRK Store | drkstore.in | FPV motors, racing drone parts |
 
 ---
 
@@ -145,13 +154,108 @@
 
 ---
 
+## 11. ISR Gimbals & Camera Pods
+
+| Component | SIYI Store | Amazon.in | IndiaMART | XBOOM | Others |
+|-----------|-----------|-----------|-----------|-------|--------|
+| **SIYI ZT30 Four-Sensor Pod** | ~5,25,000 | - | contact | - | AliExpress: ~4,50,000 |
+| **SIYI ZR10 3-Axis Gimbal+Camera** | ~43,244 | - | contact | - | AliExpress: ~35,000 |
+| **Skydroid C12 Thermal+2K Gimbal** | - | - | contact | - | ~35,900 |
+| **Servo Pan-Tilt (2x MG996R)** | - | ~530 (servo only) | 589 (kit w/ micro servos) | - | Robokits: 899 (kit) |
+
+**Cheapest:** Pan-Tilt Kit → IndiaMART/Probots (589) | SIYI ZR10 → AliExpress (~35K) | ISR pods are specialized — contact sellers
+
+---
+
+## 12. Fiber-Optic Tethering
+
+| Component | FlySpark | IndiaMART | AliExpress | Amazon.in |
+|-----------|----------|-----------|------------|-----------|
+| **Fiber-Optic Spool 1-2km (drone FPV)** | 42,000-52,999 | ~35,820 (3-30km kit) | ~8,000-15,000 (OEM) | - |
+| **Fiber Media Converter (pair)** | - | ~5,000 | - | ~5,000-6,000 |
+| **SFP Transceiver Module 1G** | - | 750-2,000 | - | ~1,500-2,500 |
+
+**Cheapest:** Fiber spool → AliExpress OEM (~8K-15K) | Media converter → IndiaMART/Moglix (~5K pair) | SFP → IndiaMART (750)
+
+---
+
+## 13. Communications & Networking
+
+| Component | Robocraze | Fab.to.Lab | Flipkart | Amazon.in | IndiaMART |
+|-----------|-----------|------------|----------|-----------|-----------|
+| **LoRa Gateway RAK5146** | - | 13,035 | - | - | - |
+| **LoRa Gateway RAK7268** | - | 21,655 | - | - | - |
+| **TTGO LoRa32 / ESP32 LoRa SX1276** | 1,849 | - | - | ~2,500-4,000 | 3,310 (T-Beam) |
+| **Alfa AWUS036ACH WiFi Adapter** | - | - | ~6,899 | ~7,699-8,699 | 7,244 |
+
+**Cheapest:** LoRa32 → Robocraze (1,849) | RAK5146 → Fab.to.Lab (13,035) | Alfa WiFi → Flipkart (~6,899)
+
+---
+
+## 14. Specialized Antennas & RF Amplifiers
+
+| Component | Robokits | Robu.in | Amazon.in | IndiaMART | Sharvi Electronics |
+|-----------|----------|---------|-----------|-----------|-------------------|
+| **Log-Periodic Antenna (400MHz-1.5GHz)** | - | - | - | 25,000 | - |
+| **2.4GHz 9dBi Yagi Directional** | - | 843 | ~500-1,200 | ~800-1,500 | - |
+| **Wideband Discone 25MHz-1.3GHz (Sirio SD1300)** | - | - | ~9,000-15,000 | 30,000-35,000 (military grade) | - |
+| **LNA 0.1-2000MHz 30dB** | 665 | ~500-700 | - | - | 409 |
+| **LNA 0.1-6GHz 20dB (full band)** | - | - | ~1,500-2,500 | 4,419 (Nooelec) | - |
+
+**Cheapest:** 2.4GHz Yagi → Amazon.in (~500) | LNA 2GHz → Sharvi (409) | LNA 6GHz → Amazon.in (~1,500) | Discone → Amazon.in (~9K)
+
+---
+
+## 15. Racing / Interceptor Components
+
+| Component | IndiaMART | ElectronicsComp | Flyrobo | Prayog India | Quadkart |
+|-----------|-----------|-----------------|---------|--------------|----------|
+| **2306 2450KV Motor (single)** | 1,969 | 2,045 (+GST) | 2,505 | - | - |
+| **2306 2450KV Motor (set of 4)** | ~7,876 | ~8,180 (+GST) | ~10,020 | - | - |
+| **BLHeli_32 35A ESC (single)** | - | - | - | 1,099 | - |
+| **BLHeli_32 35A 4-in-1 ESC** | - | - | - | - | 3,999 |
+| **QAV250 Racing Frame** | 840 | 946 (+GST) | - | - | - |
+
+**Cheapest:** 2306 Motor → IndiaMART (1,969/pc) | BLHeli_32 ESC → Prayog India (1,099/pc) | QAV250 → IndiaMART (840)
+
+---
+
+## 16. Payload Delivery Systems
+
+| Component | XBOOM | RC Hyderabad | IndiaMART | International |
+|-----------|-------|-------------|-----------|---------------|
+| **Drone Parachute 2-3kg class** | 6,599 | 8,000 | - | - |
+| **Drone Parachute 1kg class** | available | 5,800 (OOS) | - | - |
+| **Drone Winch System (5-10kg, 30m)** | contact | - | - | ~2,42,000 ($2,900 USD) |
+| **Net Launcher (CO2, handheld)** | - | - | contact | ~39,000 ($469 USD) |
+| **Waterproof Payload Box (DIY IP67)** | - | - | - | Amazon.in: 300-800 |
+
+**Cheapest:** Parachute 2-3kg → XBOOM (6,599) | Winch → DIY build (~2,000-5,000) | Net launcher → Net-Gun.com (~39K)
+
+---
+
+## 17. Night Vision & Navigation Sensors
+
+| Component | REES52 | Robocraze | Fab.to.Lab | Probots | IndiaMART |
+|-----------|--------|-----------|------------|---------|-----------|
+| **Pi NoIR Camera V2 (8MP, no IR filter)** | 1,589 | 1,882 | - | - | - |
+| **PMW3901 Optical Flow Sensor** | - | - | 3,260 | 3,799 (Matek combo) | - |
+| **IR LED Array 850nm (6-LED)** | - | - | - | - | 650 |
+| **IR LED Array 850nm (15-LED, 60-120m)** | - | - | - | - | 2,200 |
+
+**Cheapest:** Pi NoIR V2 → REES52 (1,589) | PMW3901 → Fab.to.Lab (3,260) | IR LEDs → IndiaMART (650)
+
+---
+
 ## Quick Reference: Best Site Per Component Category
 
 | Category | Best Price Site | Runner Up |
 |----------|----------------|-----------|
 | Frames | Robu.in | IndiaMART |
-| Motors | Robu.in / Robocraze | Indian Robo Store |
-| ESCs | Robu.in | IndiaMART |
+| Motors (utility) | Robu.in / Robocraze | Indian Robo Store |
+| Motors (racing 2306) | IndiaMART | ElectronicsComp |
+| ESCs (30A SimonK) | Robu.in | IndiaMART |
+| ESCs (BLHeli_32 35A) | Prayog India | Quadkart (4-in-1) |
 | Flight Controllers | IndiaMART (bulk) | Robokits |
 | RC Transmitters | Flipkart / IndiaMART | Robu.in |
 | LiPo Batteries | Zbotic (CNHL) | Robu.in |
@@ -160,6 +264,17 @@
 | Cameras/Sensors | Robocraze | Robu.in |
 | SDR Equipment | Robokits | Amazon.in |
 | Chargers | Robocraze | Robokits |
+| ISR Gimbals/Pods | AliExpress (import) | SIYI Store direct |
+| Fiber-Optic Tethering | AliExpress (OEM) | FlySpark (Indian) |
+| LoRa / Mesh Radios | Robocraze | Fab.to.Lab |
+| WiFi Adapters | Flipkart | IndiaMART |
+| Antennas (directional) | Amazon.in | Robu.in |
+| LNA Amplifiers | Sharvi Electronics | Robokits |
+| Racing Frames (QAV250) | IndiaMART | ElectronicsComp |
+| Drone Parachutes | XBOOM | RC Hyderabad |
+| Night Vision (Pi NoIR) | REES52 | Robocraze |
+| Optical Flow Sensors | Fab.to.Lab | Probots |
+| IR Illuminators | IndiaMART | Amazon.in |
 
 ---
 
@@ -172,3 +287,11 @@
 - Quadkart specializes in FPV racing — not ideal for utility/payload drones
 - Always check GST inclusion — some sites show ex-GST prices (ElectronicsComp adds 18% GST at checkout)
 - Shipping costs vary: Robu.in free above ₹999, Robocraze free above ₹499, Amazon Prime free
+- XBOOM.in and RC Hyderabad are the only reliable Indian sources for drone parachutes
+- Fab.to.Lab is the primary Indian stockist for RAK LoRa gateways and Nooelec SDR/LNA modules
+- Fiber-optic drone tethering is niche — FlySpark.in is the only Indian brand; AliExpress OEM spools are 3-5x cheaper
+- Professional drone winch systems cost Rs 2-3+ lakh; DIY with 12V motor + spool is Rs 2-5K
+- Net launchers are restricted/specialized — no consumer-grade Indian source; international import ~$469 USD
+- ISR camera pods (SIYI, Skydroid) are not stocked on standard Indian e-commerce — import or contact distributors
+- Prayog India and Quadkart are best for BLHeli_32 racing ESCs
+- REES52 offers the cheapest Pi NoIR Camera V2 in India
