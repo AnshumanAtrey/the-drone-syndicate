@@ -9,11 +9,10 @@ Drone that flies autonomously, detects anomalies mid-flight, switches to local A
 | # | Variant | Approx Budget (INR) |
 |---|---------|-------------------|
 | 1 | Budget Build (Orange Pi 5) — 6 TOPS NPU, local object detection | 32,000 - 35,000 |
-| 2 | Mid-Range (Jetson Nano) — 128 CUDA cores, YOLOv5 @ 30+ FPS | 55,000 - 60,000 |
-| 3 | Ultra Budget (Raspberry Pi 4) — MobileNet-SSD @ 2-5 FPS | 28,000 - 32,000 |
-| 4 | Premium Research (Jetson Orin Nano) — 67 TOPS, YOLOv8 @ 40+ FPS | 85,000 - 95,000 |
-| 5 | Fiber-Optic Tethered (Unjammable) — immune to EMP/jamming, 1-5km range | 50,000 - 70,000 |
-| 6 | GPS-Denied Navigation (VIO/SLAM) — flies without GPS using cameras + IMU | 75,000 - 95,000 |
+| 2 | Ultra Budget (Raspberry Pi 4) — MobileNet-SSD @ 2-5 FPS | 28,000 - 32,000 |
+| 3 | Premium Research (Jetson Orin Nano) — 67 TOPS, YOLOv8 @ 40+ FPS | 85,000 - 95,000 |
+| 4 | Fiber-Optic Tethered (Unjammable) — immune to EMP/jamming, 1-5km range | 50,000 - 70,000 |
+| 5 | GPS-Denied Navigation (VIO/SLAM) — flies without GPS using cameras + IMU | 75,000 - 95,000 |
 
 ## Phase 2 — RF Surveillance & Wireless Security Research
 
@@ -39,7 +38,8 @@ Mission-specific payloads inspired by real defense contractor systems.
 | 4 | Military Forward Resupply — autonomous supply delivery under fire | +12,000 - 25,000 |
 | 5 | Battlefield Search & Rescue — thermal + AI to find wounded, drop supplies | +12,000 - 20,000 |
 | 6 | EW Decoy / Countermeasure Dispenser — electronic decoys, chaff, IR countermeasures | +15,000 - 25,000 |
+| 7 | RC Payload Drop (400-500g) — standalone simple RC drone, servo release | 18,000 - 25,000 |
 
 ---
 
-**17 variants** across **3 phases** | Base drone: **Rs. 28K - 95K** | Full stack with payloads: up to **Rs. 1.3L+**
+**17 variants** across **3 phases** | Base drone: **Rs. 18K - 95K** | Full stack with payloads: up to **Rs. 1.3L+**
