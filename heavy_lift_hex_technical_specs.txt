@@ -1,0 +1,634 @@
+================================================================================
+    HEAVY-LIFT HEXACOPTER TECHNICAL SPECIFICATIONS
+    Multi-Payload Release System (6 x 500g drops)
+    Compiled: February 2026
+================================================================================
+
+TABLE OF CONTENTS
+1. Motor Option A: 3508 380KV + 15" Props on 6S (RECOMMENDED)
+2. Motor Option B: 3508 700KV + 12-13" Props on 4S
+3. Motor Option C: 2216 880KV + 10" Props on 4S (Budget)
+4. Weight Budget Estimation
+5. Flight Time Estimates
+6. Multi-Payload Release Mechanism Design
+7. RC TX/RX Channel Requirements
+8. Recommended Prop Sizes Summary
+9. Final Recommendations
+
+================================================================================
+SECTION 1: MOTOR OPTION A - 3508 380KV + 15" PROPS ON 6S (RECOMMENDED)
+================================================================================
+
+Source: T-Motor Official MN3508 KV380 Data Sheet
+Motor Weight: 82g (without cables), 103g (with cables)
+Max Continuous Current: 14A (180 seconds)
+Max Power: 310W
+Internal Resistance: 205 milliohm
+Shaft Diameter: 4mm
+Dimensions: 41.8mm dia x 26.5mm
+LiPo Compatibility: 3-6S
+
+--- THRUST DATA AT 6S (22.2V) WITH 15x5 CF PROPELLER ---
+
+  Throttle | Current (A) | Thrust (g) | Efficiency (g/W)
+  ---------|-------------|------------|------------------
+     50%   |    3.6      |    820     |     ~10.3
+     65%   |    6.1      |   1200     |      ~8.9
+     75%   |    9.5      |   1500     |      ~7.1
+     85%   |   11.3      |   1700     |      ~6.8
+    100%   |   13.3      |   1880     |      ~6.4
+
+--- ADDITIONAL PROP OPTIONS AT 6S (22.2V) ---
+
+  14x4.8 CF Propeller:
+  Throttle | Current (A) | Thrust (g)
+     50%   |    2.9      |    710
+     75%   |    7.5      |   1350
+    100%   |   11.5      |   1730
+
+  13x4.4 CF Propeller:
+  Throttle | Current (A) | Thrust (g)
+     50%   |    2.1      |    550
+     75%   |    5.5      |   1000
+    100%   |    8.4      |   1380
+
+  12x4 CF Propeller:
+  Throttle | Current (A) | Thrust (g)
+     50%   |    1.7      |    430
+     75%   |    4.6      |    870
+    100%   |    7.1      |   1160
+
+--- 6-MOTOR TOTALS WITH 15x5 CF PROPS ON 6S ---
+
+  Throttle | Total Current | Total Thrust
+     50%   |   21.6A       |   4,920g  (4.92 kg)
+     65%   |   36.6A       |   7,200g  (7.20 kg)
+     75%   |   57.0A       |   9,000g  (9.00 kg)
+     85%   |   67.8A       |  10,200g  (10.20 kg)
+    100%   |   79.8A       |  11,280g  (11.28 kg)
+
+ANALYSIS:
+- At 50% throttle (hover), 6 motors produce ~4.92 kg of thrust
+- This means the drone can hover a total AUW of ~4.9 kg at 50% throttle
+- At 65% throttle: 7.2 kg hover capacity
+- Thrust-to-weight ratio at 8 kg AUW: 11.28/8.0 = 1.41:1
+  (Minimum recommended for multirotors is 2:1, so 8 kg is the safe upper limit
+   where the hex would hover at ~70-75% throttle)
+
+Recommended ESC: T-Motor AIR 40A (40A max, 22.2V max)
+
+================================================================================
+SECTION 2: MOTOR OPTION B - 3508 700KV + 12-13" PROPS ON 4S
+================================================================================
+
+Source: T-Motor MN3508 700KV, Racerstar BR3508 700KV, MAD 3508 IPE 700KV
+Motor Weight: 99-104g (varies by manufacturer)
+Max Current: ~22-28A
+Max Voltage: 4S (14.8V), some models support up to 6S
+Shaft Diameter: 4-5mm
+
+--- THRUST DATA AT 4S (14.8V) ---
+
+  With 12x4 Propeller (T-Motor MN3508 700KV):
+  Max Thrust: ~1,360g at 16.1A, 238W
+
+  With 13x5.5 Propeller (estimated from user reports):
+  Max Thrust: ~1,500-1,600g at ~20-22A
+
+  With 15x4 Propeller (Racerstar BR3508 700KV):
+  Max Thrust: ~1,780g at 21.8A, 323W
+
+--- ESTIMATED THROTTLE CURVE (12x4 prop, 4S) ---
+
+  Throttle | Current (A) | Thrust (g) | Notes
+  ---------|-------------|------------|--------
+     50%   |   ~4.5      |   ~550     | Estimated
+     65%   |   ~7.5      |   ~800     | Estimated
+     75%   |   ~10.5     |  ~1,000    | Estimated
+    100%   |   16.1      |   1,360    | Manufacturer data
+
+--- 6-MOTOR TOTALS WITH 12x4 PROPS ON 4S ---
+
+  Throttle | Total Current | Total Thrust
+     50%   |   ~27A        |  ~3,300g  (3.30 kg)
+     75%   |   ~63A        |  ~6,000g  (6.00 kg)
+    100%   |   ~96.6A      |  ~8,160g  (8.16 kg)
+
+ANALYSIS:
+- Max total thrust: ~8.16 kg (6 x 1,360g with 12" props)
+- For 3-4 kg payload, AUW ~7-8 kg, this is marginal
+- Higher thrust achievable with 13" props (~9,600g total)
+- CAUTION: 4S limits voltage headroom; 6S is much better for this motor class
+- Current draw is HIGH on 4S - requires 30A+ ESCs and high C-rate battery
+
+Recommended ESC: 30A minimum (BLHeli_32 or similar)
+
+================================================================================
+SECTION 3: MOTOR OPTION C - 2216 880KV + 10" PROPS ON 4S (BUDGET)
+================================================================================
+
+Source: EMAX MT2216 810KV, T-Motor AIR 2216 880KV
+Motor Weight: ~56-62g (depending on manufacturer)
+Max Current: ~15-18A
+LiPo: 3-4S
+
+--- THRUST DATA AT 4S (14.8V) ---
+
+  EMAX MT2216 810KV with 10x3.8 prop:
+  Max Thrust: 1,070g at 15.4A, 228W
+
+  EMAX MT2216 810KV with 10x4.5 (1045) prop:
+  Max Thrust: ~950g at ~14A (manufacturer rated)
+
+  T-Motor 2216 900KV with 1045 prop on 4S:
+  Max Thrust: ~900-1,000g (Tyto Robotics database)
+
+--- ESTIMATED THROTTLE CURVE (1045 prop, 4S) ---
+
+  Throttle | Current (A) | Thrust (g) | Notes
+  ---------|-------------|------------|--------
+     50%   |   ~3.5      |   ~380     | Estimated
+     65%   |   ~6.0      |   ~560     | Estimated
+     75%   |   ~9.0      |   ~700     | Estimated
+    100%   |  ~15.0      |   ~950     | Manufacturer rated
+
+--- 6-MOTOR TOTALS WITH 1045 PROPS ON 4S ---
+
+  Throttle | Total Current | Total Thrust
+     50%   |   ~21A        |  ~2,280g  (2.28 kg)
+     75%   |   ~54A        |  ~4,200g  (4.20 kg)
+    100%   |   ~90A        |  ~5,700g  (5.70 kg)
+
+ANALYSIS:
+- Max total thrust: ~5.7 kg (6 x 950g)
+- For 2:1 thrust-to-weight ratio, max AUW = ~2.85 kg
+- NOT RECOMMENDED for 3-4 kg payload carrying
+- These motors are designed for 450-class quads weighing 1.5-2.5 kg
+- With 3 kg payload + 2.5 kg dry weight = 5.5 kg AUW
+- Thrust-to-weight ratio: 5.7/5.5 = 1.04:1 (DANGEROUS - cannot fly safely)
+- VERDICT: INADEQUATE for this mission. Use only for sub-1kg payloads.
+
+================================================================================
+SECTION 4: WEIGHT BUDGET ESTIMATION (OPTION A BUILD)
+================================================================================
+
+--- DETAILED COMPONENT WEIGHTS ---
+
+Component                          | Qty | Unit Wt (g) | Total (g)
+-----------------------------------|-----|-------------|----------
+Tarot 680 PRO Frame (carbon fiber) |  1  |    780      |    780
+T-Motor MN3508 380KV motors        |  6  |    103      |    618
+T-Motor AIR 40A ESCs               |  6  |     28      |    168
+15x5 CF Propellers                 |  6  |     27      |    162
+6S 10000mAh LiPo Battery           |  1  |   1,350     |  1,350
+Pixhawk 2.4.8 Flight Controller    |  1  |     38      |     38
+GPS Module (M8N + compass)         |  1  |     30      |     30
+RC Receiver (iA10B or R12DS)       |  1  |     12      |     12
+Power Distribution Board           |  1  |     25      |     25
+MG90S Servo Release Mechanisms     |  6  |     14      |     84
+Servo mounting hardware (3D print) |  6  |     15      |     90
+Wiring, connectors, zip ties       |  1  |    100      |    100
+Landing gear (Tarot included)      |  1  |    included  |      0
+Safety switch + buzzer             |  1  |      8      |      8
+                                   |     |             |----------
+TOTAL DRY WEIGHT (no payload):     |     |             |  3,465g
+
+--- PAYLOAD CONFIGURATIONS ---
+
+Config A: Full payload (6 x 500g)  = 3,000g
+Config B: Partial (3 x 500g)       = 1,500g
+Config C: No payload               =     0g
+
+--- ALL-UP WEIGHTS ---
+
+With 6S 10000mAh battery:
+  Full payload AUW:     3,465 + 3,000 = 6,465g  (6.47 kg)
+  Half payload AUW:     3,465 + 1,500 = 4,965g  (4.97 kg)
+  No payload AUW:       3,465 + 0     = 3,465g  (3.47 kg)
+
+With 6S 5000mAh battery (saving ~600g):
+  Battery weight:       ~730g (vs 1,350g)
+  Dry weight adjusted:  2,845g
+  Full payload AUW:     2,845 + 3,000 = 5,845g  (5.85 kg)
+  No payload AUW:       2,845 + 0     = 2,845g  (2.85 kg)
+
+--- THRUST-TO-WEIGHT RATIOS (Option A: 3508 380KV, 15x5, 6S) ---
+
+  Configuration          | AUW    | Max Thrust | TWR   | Hover Throttle
+  -----------------------|--------|------------|-------|---------------
+  Full payload, 10Ah     | 6.47kg | 11.28kg    | 1.74  |   ~57%
+  Full payload, 5Ah      | 5.85kg | 11.28kg    | 1.93  |   ~52%
+  Half payload, 10Ah     | 4.97kg | 11.28kg    | 2.27  |   ~44%
+  No payload, 10Ah       | 3.47kg | 11.28kg    | 3.25  |   ~31%
+  No payload, 5Ah        | 2.85kg | 11.28kg    | 3.96  |   ~25%
+
+NOTES:
+- TWR of 1.74:1 at full load is functional but leaves limited margin
+- Recommended minimum TWR for multirotors: 2:1
+- The 5Ah battery option with full payload gives 1.93:1 - acceptable
+- As payloads are dropped, TWR improves dramatically
+- At half payload, the hex has excellent 2.27:1 ratio
+
+================================================================================
+SECTION 5: FLIGHT TIME ESTIMATES
+================================================================================
+
+Formula: Flight Time (min) = (Battery Capacity Ah x 0.80) / Avg Current Draw x 60
+
+Where:
+- 0.80 = 80% usable capacity (20% reserve for LiPo safety)
+- Avg Current Draw = current at hover throttle for given AUW
+
+--- SCENARIO 1: 6S 10000mAh WITH 3 kg PAYLOAD (AUW ~6.47 kg) ---
+
+  Hover throttle: ~57%
+  Current per motor at 57%: ~4.5A (interpolated from data)
+  Total hover current: ~27A
+  Flight time: (10.0 x 0.80) / 27 x 60 = 17.8 minutes
+
+  Practical flight time (with maneuvering): ~14-16 minutes
+
+--- SCENARIO 2: 6S 5000mAh WITH 3 kg PAYLOAD (AUW ~5.85 kg) ---
+
+  Hover throttle: ~52%
+  Current per motor at 52%: ~3.8A
+  Total hover current: ~23A
+  Flight time: (5.0 x 0.80) / 23 x 60 = 10.4 minutes
+
+  Practical flight time: ~8-9 minutes
+
+--- SCENARIO 3: 6S 10000mAh WITHOUT PAYLOAD (AUW ~3.47 kg) ---
+
+  Hover throttle: ~31%
+  Current per motor at 31%: ~1.8A (very efficient)
+  Total hover current: ~10.8A
+  Flight time: (10.0 x 0.80) / 10.8 x 60 = 44.4 minutes
+
+  Practical flight time: ~30-35 minutes
+
+--- SCENARIO 4: PROGRESSIVE PAYLOAD DROP (realistic mission) ---
+
+  Start: 6.47 kg AUW, hover at ~57%, ~27A total
+  After drop 1 (5.97 kg): ~53%, ~25A
+  After drop 2 (5.47 kg): ~49%, ~23A
+  After drop 3 (4.97 kg): ~45%, ~21A
+  After drop 4 (4.47 kg): ~40%, ~18A
+  After drop 5 (3.97 kg): ~36%, ~15A
+  After drop 6 (3.47 kg): ~31%, ~11A
+
+  Average current across full mission: ~20A
+  Flight time with 10Ah: (10.0 x 0.80) / 20 x 60 = 24 minutes
+  Practical: ~18-20 minutes for full 6-drop mission
+
+--- FLIGHT TIME SUMMARY TABLE ---
+
+  Battery         | Payload | Est. Hover Time | Practical Time
+  ----------------|---------|-----------------|---------------
+  6S 10000mAh     | 3.0 kg  |   ~18 min       |  14-16 min
+  6S 10000mAh     | 1.5 kg  |   ~28 min       |  22-25 min
+  6S 10000mAh     | 0 kg    |   ~44 min       |  30-35 min
+  6S 5000mAh      | 3.0 kg  |   ~10 min       |   8-9 min
+  6S 5000mAh      | 0 kg    |   ~22 min       |  16-18 min
+  6S 10Ah (drops) | 6x500g  |   ~24 min       |  18-20 min
+
+================================================================================
+SECTION 6: MULTI-PAYLOAD RELEASE MECHANISM DESIGN
+================================================================================
+
+--- CONCEPT OVERVIEW ---
+
+6 individual servo-actuated payload bays, each holding one 500g package,
+mounted radially on the hexacopter frame between/below the motor arms.
+
+--- MECHANICAL DESIGN ---
+
+Each release unit consists of:
+  1. One MG90S metal-gear micro servo (13.4g, 2.2 kg-cm torque at 4.8V)
+  2. A 3D-printed payload cradle/hook bracket (~15g)
+  3. A locking pin or rotating hook mechanism
+  4. Mounting hardware (M2/M3 screws, standoffs)
+
+Mechanism Types (choose one):
+
+  A) PIN-PULL RELEASE (Simplest):
+     - Servo rotates to pull a steel pin (2mm dia) out of a loop
+     - Payload hangs on a loop/carabiner held by the pin
+     - Pro: Simple, reliable, lightweight
+     - Con: Cannot re-engage in flight
+
+  B) ROTATING HOOK RELEASE:
+     - Servo rotates a hook from "closed" to "open" position
+     - Payload cord sits in the hook notch
+     - Pro: Can re-engage, more secure
+     - Con: Slightly more complex 3D print
+
+  C) SLIDING GATE RELEASE:
+     - Servo moves a sliding gate that blocks/unblocks a slot
+     - Payload cord passes through slot
+     - Pro: Very secure, positive lock
+     - Con: More friction, heavier
+
+RECOMMENDED: Option A (Pin-Pull) for simplicity and reliability.
+
+--- MOUNTING LAYOUT ---
+
+  Top-down view of hexacopter with 6 release positions:
+
+            Motor 1
+           /       \
+     Motor 6   [R1]   Motor 2
+     [R6] |           | [R2]
+          |   CENTER  |
+     [R5] |           | [R3]
+     Motor 5   [R4]   Motor 3
+           \       /
+            Motor 4
+
+  [R1]-[R6] = Release mechanisms mounted between motor arms
+
+  Mounting Options:
+  - Underneath the main plate, between arms (preferred)
+  - On the landing gear crossbars
+  - On a custom payload rail attached to the center plate
+
+  CLEARANCE: Each payload hangs 100-150mm below the frame.
+  Ensure landing gear height accommodates payload + ground clearance.
+  Tarot 680 PRO has 180mm ground clearance - adequate for small packages.
+
+--- WIRING ---
+
+  Each MG90S servo requires:
+  - Signal wire (to receiver/FC PWM output)
+  - +5V power (from BEC, NOT from receiver directly)
+  - Ground
+
+  IMPORTANT: Do NOT power 6 servos from the receiver's 5V rail.
+  Use a dedicated BEC (Battery Eliminator Circuit) rated for 3A+ at 5V.
+  A 5A BEC is recommended for 6 servos (peak current ~6A during actuation).
+
+  Wiring diagram:
+
+  Battery --> PDB --> 5V 5A BEC --> Servo Power Bus
+                                        |
+                           +--+--+--+--+--+
+                           S1 S2 S3 S4 S5 S6
+                           |  |  |  |  |  |
+                        Signal wires to RX CH5-CH10
+
+================================================================================
+SECTION 7: RC TX/RX CHANNEL REQUIREMENTS
+================================================================================
+
+--- CHANNEL ALLOCATION ---
+
+  Channel  | Function         | Control Input
+  ---------|------------------|-------------------
+  CH1      | Aileron (Roll)   | Right stick X
+  CH2      | Elevator (Pitch) | Right stick Y
+  CH3      | Throttle         | Left stick Y
+  CH4      | Rudder (Yaw)     | Left stick X
+  CH5      | Flight Mode      | 3-position switch
+  CH6      | Servo Release 1  | Toggle switch / mix
+  CH7      | Servo Release 2  | Toggle switch / mix
+  CH8      | Servo Release 3  | Toggle switch / mix
+  CH9      | Servo Release 4  | Pot/knob or mix
+  CH10     | Servo Release 5  | Pot/knob or mix
+  CH11     | Servo Release 6  | Pot/knob or mix (if available)
+  CH12     | Spare/RTL        | Emergency switch
+
+  MINIMUM CHANNELS NEEDED: 11 (5 flight + 6 servo releases)
+  RECOMMENDED: 12+ channels
+
+--- OPTION 1: FlySky FS-i6X + iA10B (BUDGET) ---
+
+  Channels: 10 (with iA10B receiver)
+
+  VERDICT: MARGINAL. Only 10 channels total.
+  - 4 channels for sticks (aileron, elevator, throttle, rudder)
+  - 1 channel for flight mode
+  - 5 remaining channels for servo releases
+  - CANNOT control all 6 servos individually!
+
+  WORKAROUND: Use channel mixing to trigger 2 servos from 1 channel,
+  or use sequential release (drop in pairs). This is not ideal.
+
+  PWM Output: iA10B has 10 PWM output pins, so hardware supports it,
+  but the TX only has 10 channels total (4 sticks + 4 switches + 2 pots).
+
+  LIMITATION: The i6X physically has only 6 switches/knobs beyond the
+  sticks, making it very difficult to individually address 6 releases
+  plus flight mode.
+
+--- OPTION 2: RadioLink AT10II + R12DS (RECOMMENDED BUDGET) ---
+
+  Channels: 12
+  Price: ~$90-120 USD
+
+  VERDICT: ADEQUATE.
+  - 12 channels provides enough for all functions
+  - R12DS receiver has 12 PWM/SBUS outputs
+  - Multiple switches and knobs for assignment
+  - Telemetry support (battery voltage monitoring)
+  - Sufficient for 5 flight channels + 6 servo + 1 spare
+
+  NOTE: You will need to use channel mixing to map the 6 release
+  channels to available switches. The AT10II has 2 sticks,
+  4 toggle switches, 2 pots = enough for 6 aux channels.
+
+--- OPTION 3: FrSky Taranis QX7 / X9D + (BEST) ---
+
+  Channels: 16
+  Price: ~$120-200 USD
+
+  VERDICT: IDEAL.
+  - 16 channels - more than enough
+  - OpenTX firmware allows unlimited channel mixing
+  - Programmable logic: sequential release from one switch
+  - Can program a single switch to cycle through releases 1-6
+  - Excellent range with XM+, X8R, or R-XSR receivers
+  - Large community support for ArduPilot integration
+
+  X9D+ has 6 switches + 2 sliders + 2 pots = abundant controls
+  QX7 has 4 switches + 2 pots = still sufficient with mixing
+
+  RECOMMENDED RECEIVER: FrSky X8R (8 PWM + 16ch SBUS)
+  Or: FrSky R-XSR (SBUS output, requires FC for servo control)
+
+--- OPTION 4: Use Flight Controller for Servo Control ---
+
+  BEST APPROACH for 6+ servo channels:
+
+  Instead of running servos directly from the RX, use the Pixhawk/ArduPilot
+  flight controller to manage servo outputs. ArduPilot supports:
+
+  - SERVOn_FUNCTION parameter to assign any output to a relay/servo
+  - RC passthrough mode (RCn_OPTION for relay toggle)
+  - Programmable servo outputs on AUX1-AUX6 pins
+  - Triggered via RC channel or GCS (Ground Control Station)
+
+  This means you only need a few RC channels for triggers:
+  - 1 switch for "drop next payload" (sequential release)
+  - Or 2-3 switches with mixing for individual control
+
+  Pixhawk 2.4.8 has 6 AUX outputs (AUX1-AUX6) perfect for 6 servos!
+  Main outputs 1-6 go to ESCs, AUX outputs 1-6 go to release servos.
+
+  ArduPilot Configuration:
+    SERVO9_FUNCTION = 0 (disabled) or specific relay function
+    SERVO10_FUNCTION = 0
+    ... through SERVO14_FUNCTION
+
+    RCx_OPTION = 28 (Relay On/Off) for each release channel
+
+  This is the RECOMMENDED approach. It works with ANY TX that has
+  at least 7-8 channels (4 sticks + mode + 2-3 release triggers).
+
+================================================================================
+SECTION 8: RECOMMENDED PROP SIZES SUMMARY
+================================================================================
+
+  Motor              | KV  | Battery | BEST Prop  | ALT Prop   | Max Thrust/Motor
+  -------------------|-----|---------|------------|------------|------------------
+  MN3508 380KV       | 380 | 6S      | 15x5 CF   | 14x4.8 CF  | 1,880g / 1,730g
+  MN3508 380KV       | 380 | 4S      | 15x5 CF   | 14x4.8 CF  | ~1,300g (derated)
+  MN3508 700KV       | 700 | 4S      | 12x4      | 13x4.4     | 1,360g / ~1,500g
+  MN3508 700KV       | 700 | 3S      | 13x5.5    | 12x4       | ~1,100g
+  2216 880KV          | 880 | 4S      | 10x4.5    | 10x3.8     | ~950g / 1,070g
+  2216 880KV          | 880 | 3S      | 10x4.5    | 9x4.7      | ~650g
+
+  PROP SELECTION RULES:
+  - Lower KV = larger prop (more efficient, more thrust per watt)
+  - Higher voltage = same RPM with lower current (more efficient)
+  - Carbon fiber props preferred for rigidity and consistency
+  - Self-tightening ("self-locking") prop adapters recommended for hex
+  - Always use matched CW/CCW prop pairs
+
+  FOR THIS BUILD (3508 380KV on 6S): Use T-Motor 15x5 CF propellers
+  Weight per prop: 26.5g
+  These are the T-Motor P15x5 carbon fiber props (TM-P15x5-CF)
+
+================================================================================
+SECTION 9: FINAL RECOMMENDATIONS
+================================================================================
+
+--- RECOMMENDED BUILD (Best Performance) ---
+
+  Frame:      Tarot 680 PRO (TL68P00)               - $85-120
+  Motors:     6x T-Motor MN3508 380KV                - $45-55 each ($300)
+  ESCs:       6x T-Motor AIR 40A                     - $25-35 each ($180)
+  Props:      6x T-Motor 15x5 CF (3 CW + 3 CCW)     - $15-20/pair ($50)
+  Battery:    1x Tattu 6S 10000mAh 25C LiPo          - $120-150
+  FC:         Pixhawk 2.4.8 (or Holybro Pixhawk 4)   - $50-80
+  GPS:        M8N GPS + Compass Module                - $20-30
+  TX/RX:      RadioLink AT10II + R12DS (budget)       - $90-120
+              OR FrSky Taranis X9D+ SE + X8R          - $180-220
+  Release:    6x MG90S Metal Gear Servos              - $2-3 each ($15)
+  Mechanism:  6x 3D printed pin-pull brackets          - $5-10 (filament)
+  BEC:        5V 5A dedicated BEC                     - $8-12
+  PDB:        Matek FCHUB-6S or equivalent            - $15-20
+  Wiring:     XT90 connector, 12AWG, misc             - $15-20
+
+  ESTIMATED TOTAL BUILD COST: $950 - $1,250 USD
+
+--- PERFORMANCE SUMMARY ---
+
+  Metric                              | Value
+  ------------------------------------|------------------
+  Dry Weight (no battery, no payload) | ~2,115g
+  Ready-to-Fly Weight (no payload)    | ~3,465g
+  Max Payload                         | ~4,000g (limited by TWR)
+  Recommended Payload                 | 3,000g (6 x 500g)
+  All-Up Weight (with 3 kg payload)   | ~6,465g
+  Maximum Thrust                      | 11,280g
+  Thrust-to-Weight (loaded)           | 1.74:1
+  Thrust-to-Weight (unloaded)         | 3.25:1
+  Flight Time (loaded, 10Ah)          | 14-16 min
+  Flight Time (unloaded, 10Ah)        | 30-35 min
+  Flight Time (drop mission, 10Ah)    | 18-20 min
+  Hover Throttle (loaded)             | ~57%
+  Hover Throttle (unloaded)           | ~31%
+
+--- CRITICAL NOTES ---
+
+  1. THRUST-TO-WEIGHT MARGIN: At 1.74:1 with full payload, the hex
+     has limited authority for wind gusts and aggressive maneuvering.
+     For safer operation, consider limiting payload to 2.5 kg (5 x 500g)
+     which gives TWR of ~1.89:1, or upgrade to a larger frame (Tarot 960)
+     with bigger motors (4006/4008 class).
+
+  2. BATTERY C-RATING: At full payload, hover current is ~27A and max
+     burst could reach 80A. A 10000mAh 25C battery provides 250A
+     continuous, which is more than adequate.
+
+  3. PROGRESSIVE IMPROVEMENT: As each 500g payload is released, the
+     drone gets lighter, hover throttle drops, and efficiency improves.
+     This is a significant advantage of the multi-drop design.
+
+  4. FAILSAFE: Program ArduPilot Return-To-Launch (RTL) on signal loss.
+     Consider geofencing to prevent flyaways.
+
+  5. LEGAL: Check local regulations for drone weight limits. In many
+     jurisdictions, drones over 250g require registration, and drones
+     carrying/dropping payloads may require special permits.
+
+  6. WIND TOLERANCE: At TWR 1.74:1, max recommended wind speed is
+     approximately 15-20 km/h. Above this, control authority degrades.
+
+--- WHY NOT OPTION B OR C? ---
+
+  Option B (3508 700KV + 4S): Viable but less efficient. The 4S voltage
+  means higher current for the same power, reducing flight time and
+  requiring higher C-rate batteries. Total thrust with 12" props is
+  only ~8.16 kg, giving marginal 1.26:1 TWR at 6.47 kg AUW. With 13"
+  props it improves, but 6S is simply better for this motor size.
+
+  Option C (2216 880KV + 4S): INADEQUATE. Max thrust of ~5.7 kg total
+  cannot safely lift 6.47 kg AUW. These motors are designed for
+  lightweight 450-class quadcopters, not heavy-lift hexacopters.
+
+================================================================================
+SOURCES AND REFERENCES
+================================================================================
+
+Motor Data:
+- T-Motor Official Store: https://store.tmotor.com/product/mn3508-motor-navigator-type.html
+- T-Motor MN3508 Product Page: https://store.tmotor.com/goods-354-MN3508.html
+- BrushlessMotorsParade T-Motor MN3508 380KV: https://brushlessmotorsparade.com/brushless-motor/t-motor-mn3508-380kv
+- BrushlessMotorsParade T-Motor MN3508 700KV: https://brushlessmotorsparade.com/brushless-motor/t-motor-mn3508-700kv
+- BrushlessMotorsParade Racerstar BR3508 700KV: https://brushlessmotorsparade.com/brushless-motor/racerstar-br3508-racing-edition-700kv
+- EMAX MT2216 810KV: https://brushlessmotorsparade.com/brushless-motor/emax-mt2216-810kv
+- MAD 3508 IPE: https://mad-motor.com/products/madcomponents3508ipe
+- Tyto Robotics Database (T-Motor 2216 900KV): https://database.tytorobotics.com/tests/k9w/t-motor-2216-900kv-1045prop-4s
+- ResearchGate MN3508 Test Data: https://www.researchgate.net/figure/Product-specification-and-experimental-test-data-of-T-MOTOR-MN3508-KV380-23_fig3_335258762
+
+Frame:
+- Tarot 680 PRO (HobbyKing): https://hobbyking.com/en_us/tarot-680pro-hexacopter-folding-frame-3k-carbon-kit.html
+- Tarot 680 PRO (Amazon): https://www.amazon.com/Tarot-Six-axis-Folding-Hexacopter-Aircraft/dp/B00T5VMHJW
+
+Battery:
+- Tattu 6S 10000mAh: https://genstattu.com/ta-30c-10000-6s1p-ec5.html
+- GEPRC Storm 6S 5000mAh: https://geprc.com/product/geprc-storm-6s-5000mah-95c-lipo-battery/
+
+RC Systems:
+- FlySky FS-i6X: https://www.hawks-work.com/products/flysky-10-channel-transmitter-fs-i6x-receiver-fs-ia6b-10b
+- RadioLink AT10II: https://www.amazon.com/Radiolink-Transmitter-Receivers-Controller-Helicopter/dp/B09539V6ZM
+- FrSky Taranis QX7: https://oscarliang.com/taranis-q-x7-tx/
+
+Payload Release:
+- Servo Release Mechanism (Research): https://www.researchgate.net/publication/312571929_Servo_actuated_payload_carry_and_drop_mechanism_for_unmanned_helicopter
+- MG90S Servo Specs: https://components101.com/motors/mg90s-metal-gear-servo-motor
+
+Flight Time Calculation:
+- ScoutUAV Calculator: https://www.scoutuav.com/2011/05/12/calculate-flight-time/
+- eCalc xcopterCalc: https://www.ecalc.ch/xcoptercalc.php
+- Drone Flight Time Calculator: https://www.omnicalculator.com/other/drone-flight-time
+
+ArduPilot / Build References:
+- ArduPilot Discourse (2216 880KV): https://discuss.ardupilot.org/t/tmotor-air-2216-880kv/72188
+- ArduPilot Battery Discussion: https://discuss.ardupilot.org/t/what-battery-size-and-rating-would-be-recommended-for-a-large-hexa/105798
+- DroneTrest Tarot 680 Build: https://www.dronetrest.com/t/tarot-680-pro-hexacopter-component-layout-and-maiden-flight/460
+- Drone Design Loop (Tyto Robotics): https://www.tytorobotics.com/blogs/articles/the-drone-design-loop-for-brushless-motors-and-propellers
+
+================================================================================
+END OF DOCUMENT
+================================================================================
