@@ -14,6 +14,8 @@
 | [variant-4-military-resupply.md](variant-4-military-resupply.md) | Forward base logistics / ammo resupply | ~Rs.12K-25K over Phase 1 | Elroy Air Chaparral, KARGO UAS |
 | [variant-5-battlefield-sar.md](variant-5-battlefield-sar.md) | Find wounded + drop medevac supplies | ~Rs.12K-20K over Phase 1 | DJI Enterprise SAR, NDRF ops |
 | [variant-6-ew-decoy-payload.md](variant-6-ew-decoy-payload.md) | Electronic decoy / countermeasure dispenser | ~Rs.15K-25K over Phase 1 | Leonardo BriteCloud, chaff/flare pods |
+| [variant-7-rc-payload-drop.md](variant-7-rc-payload-drop.md) | Simple RC drone, single 400-500g servo drop | Rs.18K-25K standalone | Basic payload delivery |
+| [variant-8-heavy-lift-multi-drop.md](variant-8-heavy-lift-multi-drop.md) | Heavy-lift hex, 6x500g sequential drops | Rs.55K-78K standalone | Multi-payload logistics, area delivery |
 
 ## Why These Categories
 These map directly to what Indian armed forces procure:
