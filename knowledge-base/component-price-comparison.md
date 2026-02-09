@@ -27,6 +27,9 @@
 | REES52 | rees52.com | Pi cameras, sensors, breakout boards |
 | Probots | probots.co.in | Matek FC, optical flow sensors |
 | DRK Store | drkstore.in | FPV motors, racing drone parts |
+| **AliExpress** | aliexpress.com | Cheapest for most components (app banned in India, website may work) |
+| **Banggood** | banggood.com | Alternative to AliExpress, still accessible in India |
+| **Alibaba** | alibaba.com | Bulk/wholesale from China factories, MOQ applies |
 
 ---
 
@@ -249,32 +252,190 @@
 
 ## Quick Reference: Best Site Per Component Category
 
-| Category | Best Price Site | Runner Up |
-|----------|----------------|-----------|
-| Frames | Robu.in | IndiaMART |
-| Motors (utility) | Robu.in / Robocraze | Indian Robo Store |
-| Motors (racing 2306) | IndiaMART | ElectronicsComp |
-| ESCs (30A SimonK) | Robu.in | IndiaMART |
-| ESCs (BLHeli_32 35A) | Prayog India | Quadkart (4-in-1) |
-| Flight Controllers | IndiaMART (bulk) | Robokits |
-| RC Transmitters | Flipkart / IndiaMART | Robu.in |
-| LiPo Batteries | Zbotic (CNHL) | Robu.in |
-| Jetson Boards | IndiaMART | Robu.in |
-| Raspberry Pi | Robocraze | Thingbits |
-| Cameras/Sensors | Robocraze | Robu.in |
-| SDR Equipment | Robokits | Amazon.in |
-| Chargers | Robocraze | Robokits |
-| ISR Gimbals/Pods | AliExpress (import) | SIYI Store direct |
-| Fiber-Optic Tethering | AliExpress (OEM) | FlySpark (Indian) |
-| LoRa / Mesh Radios | Robocraze | Fab.to.Lab |
-| WiFi Adapters | Flipkart | IndiaMART |
-| Antennas (directional) | Amazon.in | Robu.in |
-| LNA Amplifiers | Sharvi Electronics | Robokits |
-| Racing Frames (QAV250) | IndiaMART | ElectronicsComp |
-| Drone Parachutes | XBOOM | RC Hyderabad |
-| Night Vision (Pi NoIR) | REES52 | Robocraze |
-| Optical Flow Sensors | Fab.to.Lab | Probots |
-| IR Illuminators | IndiaMART | Amazon.in |
+| Category | Best Price (India) | Best Price (China Import) | Overall Cheapest |
+|----------|-------------------|--------------------------|------------------|
+| Frames (F450/S500) | Robu.in (261/2,690) | AliExpress (171/1,440) | **AliExpress** |
+| Motors (2212 utility) | Robu.in (616/pc) | AliExpress (315/pc) | **AliExpress** |
+| Motors (2306 racing) | IndiaMART (1,969) | AliExpress (765) | **AliExpress** |
+| ESCs (30A SimonK) | Robu.in (299) | AliExpress (315) | **India (Robu.in)** |
+| ESCs (BLHeli_32 35A) | Prayog India (1,099) | AliExpress (630) | **AliExpress** |
+| Flight Controllers (Pixhawk) | IndiaMART (5,500) | AliExpress (2,250) | **AliExpress** |
+| RC Transmitters (FS-i6) | Flipkart (3,800) | AliExpress (2,970) | **AliExpress** |
+| RC Transmitters (FS-i6X) | IndiaMART (3,389) | AliExpress (3,960) | **India (IndiaMART)** |
+| LiPo Batteries | Zbotic CNHL (1,187) | AliExpress (1,800) | **India (Zbotic)** |
+| Jetson Orin Nano | IndiaMART (33,000) | AliExpress (22,410) | **AliExpress** (pre-customs) |
+| Jetson Nano 4GB | Robocraze (10,279) | AliExpress (8,010) | **AliExpress** |
+| Raspberry Pi 4 | Robocraze (5,546) | AliExpress (4,950) | Near parity |
+| RPi Camera Module 3 | Robocraze (3,249) | AliExpress (2,250) | **AliExpress** |
+| Pi NoIR Camera V2 | REES52 (1,589) | AliExpress (2,880) | **India (REES52)** |
+| MLX90640 Thermal | Robocraze (4,589) | AliExpress (1,710) | **AliExpress** |
+| TFMini-S LiDAR | Prayog India (3,259) | AliExpress (3,510) | **India (Prayog)** |
+| Intel RealSense D435i | Robocraze (39,499) | AliExpress (24,930) | **AliExpress** |
+| PMW3901 Optical Flow | Fab.to.Lab (3,260) | AliExpress (720) | **AliExpress** |
+| HackRF One SDR | Robokits (11,001) | AliExpress (9,000) | **AliExpress** |
+| RTL-SDR Blog V4 | Amazon.in (5,934) | AliExpress (2,700) | **AliExpress** |
+| Telemetry Radio 433MHz | Robocraze (2,151) | AliExpress (1,080) | **AliExpress** |
+| EC200U 4G Module | Robocraze (1,988) | AliExpress (1,260) | **AliExpress** |
+| Alfa WiFi Adapter | Flipkart (6,899) | AliExpress (4,500) | **AliExpress** |
+| iMAX B6AC Charger | Robocraze (1,801) | AliExpress (2,790) | **India (Robocraze)** |
+| ISR Gimbals (SIYI ZR10) | SIYI direct (43,244) | AliExpress (47,700) | **India (SIYI direct)** |
+| Fiber-Optic Tethering | FlySpark (42,000) | AliExpress OEM (~9,000) | **AliExpress** |
+| LoRa / Mesh Radios | Robocraze (1,849) | AliExpress (~1,300) | **AliExpress** |
+| Antennas (directional) | Amazon.in (500) | AliExpress (~330) | **AliExpress** |
+| LNA Amplifiers | Sharvi (409) | AliExpress (~380) | Near parity |
+| Racing Frames (QAV250) | IndiaMART (840) | AliExpress (810) | Near parity |
+| Propellers (1045) | Robu.in (60-80) | AliExpress (72) | Near parity |
+| Drone Parachutes | XBOOM (6,599) | N/A | **India (XBOOM)** |
+| IR Illuminators | IndiaMART (650) | AliExpress (~430) | **AliExpress** |
+
+---
+
+## 18. AliExpress / Banggood / China Import Prices
+
+> Conversion rate: **1 USD ≈ 90 INR** (actual: 90.67 as of 8 Feb 2026) | Prices researched Feb 2026
+> Shipping: Most AliExpress items offer **free shipping to India** (15-40 days). DHL/FedEx express: $5-20 extra.
+> **Import duty:** Orders above ~Rs 5,000 ($55) may attract 18% GST + 10-20% BCD. Split orders recommended.
+> **AliExpress India ban:** App banned since 2020; website may still work. Use Banggood, forwarding services, or Indian resellers who source from China.
+
+### Companion Computers / AI Boards
+
+| Component | AliExpress USD | AliExpress INR | India Cheapest INR | Savings | Verdict |
+|-----------|---------------|----------------|-------------------|---------|---------|
+| **Jetson Orin Nano Super 8GB** | $249 - $269 | 22,410 - 24,210 | 33,000 (IndiaMART) | 27-32% | **AliExpress wins** (but customs adds ~25-40%) |
+| **Jetson Nano 4GB B01** | $89 - $149 | 8,010 - 13,410 | 10,279 (Robocraze) | 22% (low end) | **AliExpress wins** (discontinued, stock varies) |
+| **Orange Pi 5 4GB** | $60 - $75 | 5,400 - 6,750 | 6,999 (IndiaMART) | 4-23% | **AliExpress wins** (official store ~$65) |
+| **Raspberry Pi 4 4GB** | $55 - $75 | 4,950 - 6,750 | 5,546 (Robocraze) | 0-11% | **Near parity** (buy in India for warranty) |
+
+### Flight Controllers
+
+| Component | AliExpress USD | AliExpress INR | India Cheapest INR | Savings | Verdict |
+|-----------|---------------|----------------|-------------------|---------|---------|
+| **Pixhawk 2.4.8 PX4** | $25 - $45 | 2,250 - 4,050 | 5,500 (IndiaMART) | 26-59% | **AliExpress wins big** |
+| **Holybro Pixhawk 6C** | $110 - $141 | 9,900 - 12,690 | 21,499 (Robu.in) | 41-54% | **AliExpress wins big** |
+| **CC3D Flight Controller** | $8 - $18 | 720 - 1,620 | 975 (Robocraze) | 26% (low end) | **AliExpress wins** |
+
+### RC Transmitters & Receivers
+
+| Component | AliExpress USD | AliExpress INR | India Cheapest INR | Savings | Verdict |
+|-----------|---------------|----------------|-------------------|---------|---------|
+| **FlySky FS-i6 + iA6B (6CH)** | $33 - $50 | 2,970 - 4,500 | 3,800 (Flipkart) | 0-22% | **AliExpress wins** (low end) |
+| **FlySky FS-i6X + iA10B (10CH)** | $44 - $59 | 3,960 - 5,310 | 3,389 (IndiaMART) | India 14% cheaper | **India wins (IndiaMART)** |
+
+### Motors
+
+| Component | AliExpress USD | AliExpress INR | India Cheapest INR | Savings | Verdict |
+|-----------|---------------|----------------|-------------------|---------|---------|
+| **2212 920KV (single)** | $3.50 - $5.50 | 315 - 495 | 395-616 (Robocraze/Robu) | 20-49% | **AliExpress wins** |
+| **2212 920KV (set of 4)** | $12 - $22 | 1,080 - 1,980 | 2,548 (Indian Robo Store) | 22-58% | **AliExpress wins big** |
+| **2306 2450KV Racing (single)** | $8.50 - $20 | 765 - 1,800 | 1,969 (IndiaMART) | 9-61% | **AliExpress wins big** |
+
+### ESCs
+
+| Component | AliExpress USD | AliExpress INR | India Cheapest INR | Savings | Verdict |
+|-----------|---------------|----------------|-------------------|---------|---------|
+| **30A SimonK ESC (single)** | $3.50 - $5.09 | 315 - 458 | 299 (Robu.in) | India 5% cheaper | **India wins (Robu.in)** |
+| **30A SimonK ESC (set of 4)** | $12 - $18 | 1,080 - 1,620 | 1,196 (Robu.in) | 0-10% | **Near parity** |
+| **BLHeli_32 35A ESC** | $7 - $12.34 | 630 - 1,111 | 1,099 (Prayog India) | 0-43% | **AliExpress wins** |
+
+### Frames
+
+| Component | AliExpress USD | AliExpress INR | India Cheapest INR | Savings | Verdict |
+|-----------|---------------|----------------|-------------------|---------|---------|
+| **F450 Frame** | $1.90 - $8.98 | 171 - 808 | 261 (Robu.in) | 34% (low end) | **AliExpress wins** |
+| **S500 Frame w/ Landing Gear** | $16 - $27.50 | 1,440 - 2,475 | 2,690 (IndiaMART) | 8-46% | **AliExpress wins** |
+| **QAV250 Racing Frame (CF)** | $9 - $15 | 810 - 1,350 | 840 (IndiaMART) | 4% | **Near parity** |
+
+### Batteries
+
+| Component | AliExpress USD | AliExpress INR | India Cheapest INR | Savings | Verdict |
+|-----------|---------------|----------------|-------------------|---------|---------|
+| **3S 5000mAh LiPo** | $20 - $30 | 1,800 - 2,700 | 1,187 (Zbotic CNHL) | India 34% cheaper | **India wins (Zbotic)** |
+| **4S 5000mAh LiPo** | $27 - $38 | 2,430 - 3,420 | ~1,500 (Zbotic CNHL) | India 38% cheaper | **India wins (Zbotic)** |
+| **1045 Props (pair)** | $0.80 - $2.00 | 72 - 180 | 60-80 (Robu.in) | Near parity | **Buy in India** (not worth waiting) |
+
+### Cameras & Sensors
+
+| Component | AliExpress USD | AliExpress INR | India Cheapest INR | Savings | Verdict |
+|-----------|---------------|----------------|-------------------|---------|---------|
+| **RPi Camera Module 3** | $25 - $35 | 2,250 - 3,150 | 3,249 (Robocraze) | 3-31% | **AliExpress wins** |
+| **Pi NoIR Camera V2** | $32 - $33 | 2,880 - 2,970 | 1,589 (REES52) | India 45% cheaper | **India wins (REES52)** |
+| **MLX90640 Thermal Camera** | $19 - $31 | 1,710 - 2,790 | 4,589 (Robocraze) | 39-63% | **AliExpress wins big** |
+| **TFMini-S LiDAR** | $39 - $52 | 3,510 - 4,680 | 3,259 (Prayog India) | India 7% cheaper | **India wins (Prayog India)** |
+| **Intel RealSense D435i** | $277 - $429 | 24,930 - 38,610 | 39,499 (Robocraze) | 2-37% | **AliExpress wins** (but customs adds ~25%) |
+| **PMW3901 Optical Flow** | $8 - $17 | 720 - 1,530 | 3,260 (Fab.to.Lab) | 53-78% | **AliExpress wins big** |
+
+### SDR & RF Equipment
+
+| Component | AliExpress USD | AliExpress INR | India Cheapest INR | Savings | Verdict |
+|-----------|---------------|----------------|-------------------|---------|---------|
+| **HackRF One** | $100 - $155 | 9,000 - 13,950 | 11,001 (Robokits) | 0-18% | **AliExpress wins** (clone boards; not genuine GSG) |
+| **RTL-SDR Blog V4** | $30 - $40 | 2,700 - 3,600 | 5,934 (Amazon.in) | 39-54% | **AliExpress wins big** (buy from official store only) |
+
+### Communications & Networking
+
+| Component | AliExpress USD | AliExpress INR | India Cheapest INR | Savings | Verdict |
+|-----------|---------------|----------------|-------------------|---------|---------|
+| **3DR 433MHz Telemetry (pair)** | $12 - $32 | 1,080 - 2,880 | 2,151 (Robocraze) | 0-50% | **AliExpress wins** (budget 100mW pair from ~Rs 1,080) |
+| **EC200U 4G LTE Module** | $14 - $20 | 1,260 - 1,800 | 1,988 (Robocraze) | 9-37% | **AliExpress wins** |
+| **Alfa AWUS036ACH WiFi** | $50 - $65 | 4,500 - 5,850 | 6,899 (Flipkart) | 15-35% | **AliExpress wins** |
+
+### Chargers & Gimbals
+
+| Component | AliExpress USD | AliExpress INR | India Cheapest INR | Savings | Verdict |
+|-----------|---------------|----------------|-------------------|---------|---------|
+| **iMAX B6AC Charger** | $31 - $45 | 2,790 - 4,050 | 1,801 (Robocraze) | India 35% cheaper | **India wins (Robocraze)** |
+| **SIYI ZR10 Gimbal Camera** | ~$530 | ~47,700 | ~43,244 (SIYI direct) | India 9% cheaper | **India wins (SIYI direct, warranty)** |
+
+---
+
+### Master Verdict: Buy from China vs India
+
+| Buy from AliExpress/China (significant savings) | Buy in India (cheaper or better value) |
+|--------------------------------------------------|---------------------------------------|
+| Motors (2212, 2306 — 20-61% cheaper) | LiPo Batteries (Zbotic CNHL — 34-38% cheaper + no shipping risk) |
+| Pixhawk 2.4.8 (up to 59% cheaper) | Propellers (near parity, not worth waiting) |
+| Holybro Pixhawk 6C (up to 54% cheaper) | iMAX B6AC Charger (Robocraze 35% cheaper) |
+| S500 / F450 Frames (34-46% cheaper) | Pi NoIR Camera V2 (REES52 45% cheaper) |
+| BLHeli_32 ESCs (up to 43% cheaper) | TFMini-S LiDAR (India 7% cheaper) |
+| MLX90640 Thermal Camera (39-63% cheaper) | FlySky FS-i6X TX (IndiaMART 14% cheaper) |
+| PMW3901 Optical Flow (53-78% cheaper) | 30A SimonK ESCs (Robu.in 5% cheaper) |
+| RTL-SDR Blog V4 (39-54% cheaper) | Raspberry Pi 4 (near parity, warranty in India) |
+| Jetson Orin Nano (27-32% pre-customs) | SIYI ZR10 Gimbal (India 9% cheaper + warranty) |
+| RPi Camera Module 3 (3-31% cheaper) | QAV250 Racing Frame (near parity) |
+| EC200U 4G Module (9-37% cheaper) | |
+| Telemetry Radios (up to 50% cheaper) | |
+| Alfa WiFi Adapter (15-35% cheaper) | |
+| Intel RealSense D435i (2-37% cheaper) | |
+
+### Estimated Total Build Savings (Variant 2 Mid-Range Jetson Nano Build)
+
+| Component | India Price (INR) | AliExpress (INR) | Best Source |
+|-----------|------------------|-------------------|-------------|
+| Pixhawk 2.4.8 | 5,500 | 3,150 | AliExpress |
+| S500 Frame | 2,690 | 1,440 | AliExpress |
+| 4x 2212 920KV Motors | 2,548 | 1,080 | AliExpress |
+| 4x 30A ESC | 1,196 | 1,080 | AliExpress |
+| FlySky FS-i6X + iA10B | 3,389 | 3,960 | India (IndiaMART) |
+| 2x 4S 2200mAh LiPo | 3,948 | 3,948 | India (Zbotic) |
+| Jetson Nano 4GB | 10,279 | 8,010 | AliExpress |
+| RPi Camera Module 3 | 3,249 | 2,250 | AliExpress |
+| Telemetry Radio 433MHz | 2,151 | 1,080 | AliExpress |
+| EC200U 4G Module | 1,988 | 1,260 | AliExpress |
+| TFMini-S LiDAR | 3,259 | 3,510 | India (Prayog) |
+| GPS M9N | 2,099 | ~1,620 | AliExpress |
+| Props + Wires + PDB | 1,415 | ~900 | AliExpress |
+| **TOTAL** | **~43,711** | **~33,387** | **~24% savings** |
+
+> **Bottom line:** Buying from China saves ~Rs 10,300 (24%) on a Variant 2 build at current exchange rates. But factor in 3-6 week shipping, customs risk on orders >Rs 5K, and no local warranty. Best strategy: buy motors, frames, flight controllers, and sensors from China; buy batteries, chargers, LiDAR, and propellers from India.
+
+### Important Notes for China Import
+
+- **AliExpress India ban (2020):** App is restricted. Website may work. Alternatives: Banggood (still accessible), Alibaba (bulk), or Indian resellers on Amazon.in/Robu.in who source from China at 10-30% markup.
+- **Customs duty:** Electronics attract 10-20% BCD + 18% IGST. High-value items (Jetson Orin $249+) could add Rs 6,000-9,000 in customs. Split orders under Rs 5,000 each.
+- **LiPo shipping:** Many couriers refuse to ship LiPo batteries internationally (hazmat). Sellers may cancel India LiPo orders. Always buy batteries domestically.
+- **Quality risk:** China motors/ESCs may be unbranded clones. Test thoroughly before flying. Budget AliExpress FC clones may have firmware issues.
+- **Warranty:** No warranty support from China sellers. Dead-on-arrival items may take months to resolve.
+- **Delivery time:** Standard free shipping: 15-40 days. Express (DHL/FedEx): 7-15 days, costs $5-25 extra per item.
 
 ---
 
