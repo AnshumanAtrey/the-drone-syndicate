@@ -40,7 +40,7 @@ Mission-specific payloads inspired by real defense contractor systems.
 | 5 | Battlefield Search & Rescue — thermal + AI to find wounded, drop supplies | +12,000 - 20,000 |
 | 6 | EW Decoy / Countermeasure Dispenser — electronic decoys, chaff, IR countermeasures | +15,000 - 25,000 |
 | 7 | RC Payload Drop (400-500g) — standalone simple RC drone, servo release | 18,000 - 25,000 |
-| 8 | Heavy-Lift Multi-Drop Hex (6x500g) — 680mm hexacopter, 6 servo releases, 11.3kg thrust | 55,000 - 78,000 |
+| 8 | Heavy-Lift Multi-Drop Hex (6x500g) — 850mm hexacopter, 6 servo releases, 11.3kg thrust | 60,000 - 83,000 |
 
 ---
 

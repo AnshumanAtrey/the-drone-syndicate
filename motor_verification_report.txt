@@ -1,0 +1,535 @@
+================================================================================
+    MOTOR VERIFICATION REPORT - HEAVY-LIFT HEXACOPTER (3kg PAYLOAD)
+    Independent Research & Safety Analysis
+    Date: February 2026
+================================================================================
+
+PURPOSE:
+  Verify whether 3508-class 380KV motors can safely lift a 3kg payload
+  on a hexacopter. Minimum required thrust-to-weight ratio: 1.5:1,
+  target 1.7:1 or better. This is a SAFETY-CRITICAL analysis.
+
+================================================================================
+MOTOR 1: T-Motor MN3508 380KV (VERIFIED - RECOMMENDED)
+================================================================================
+
+SOURCE: T-Motor official store (store.tmotor.com), cross-referenced with
+        brushlessmotorsparade.com and ResearchGate academic test data.
+STATUS: VERIFIED with multiple independent sources.
+
+--- SPECIFICATIONS ---
+  KV Rating:            380 RPM/V
+  Configuration:        12N14P
+  Weight (no cables):   82g
+  Weight (with cables): 103g
+  Internal Resistance:  205 milliohm
+  Max Continuous Current: 14A (180 seconds)
+  Max Continuous Power:   310W
+  Idle Current:         0.4A @ 10V
+  Shaft Diameter:       4mm
+  Motor Dimensions:     41.8mm dia x 26.5mm
+  LiPo Compatibility:   3-6S
+  Bearings:             Japanese EZO (oversized, 2x comparable motors)
+  MTBF:                 ~1000 hours
+
+--- VERIFIED THRUST DATA: 6S (22.2V) WITH 15x5 CF PROPELLER ---
+
+  Throttle | Current (A) | Power (W)  | Thrust (g) | RPM  | Efficiency (g/W)
+  ---------|-------------|------------|------------|------|------------------
+     50%   |    3.6      |   79.92    |    820     | 3900 |     10.26
+     65%   |    6.1      |  135.42    |   1200     | 4800 |      8.86
+     75%   |    9.5      |  210.90    |   1500     | 5300 |      7.11
+     85%   |   11.3      |  250.86    |   1700     | 5700 |      6.78
+    100%   |   13.3      |  295.26    |   1880     | 5900 |      6.37
+
+--- VERIFIED THRUST DATA: 6S (22.2V) WITH 14x4.8 CF PROPELLER ---
+
+  Throttle | Current (A) | Power (W)  | Thrust (g) | RPM  | Efficiency (g/W)
+  ---------|-------------|------------|------------|------|------------------
+     50%   |    2.9      |   64.38    |    710     | 4300 |     11.03
+     65%   |    5.3      |  117.66    |   1100     | 5300 |      9.35
+     75%   |    7.5      |  166.50    |   1350     | 5700 |      8.11
+     85%   |    9.8      |  217.56    |   1580     | 6000 |      7.26
+    100%   |   11.5      |  255.30    |   1730     | 6500 |      6.78
+
+CRITICAL NOTE ON DATA DISCREPANCY:
+  The earlier T-Motor store page showed 1160g max thrust with 15x5 props.
+  This was INCORRECT -- that figure was for the 12x4 CF prop, not 15x5.
+  The VERIFIED maximum with 15x5 CF props on 6S is 1,880g at 13.3A.
+  This was confirmed through the full official data table extraction
+  which shows ALL propeller configurations side by side.
+
+RELIABILITY:
+  - T-Motor is the industry standard for professional multirotor motors
+  - EZO bearings are the gold standard in the RC motor industry
+  - 1000-hour MTBF is among the best in class
+  - Widely used in ArduPilot community builds
+  - Referenced in academic research (ResearchGate published papers)
+  - Users on ArduPilot forums have built F550/680 hexacopters with these
+    motors carrying payloads successfully
+
+VERDICT: VERIFIED AND RECOMMENDED. Best combination of documented
+         performance data, reliability, and community support.
+         Price: ~$45-55 USD each.
+
+================================================================================
+MOTOR 2: SunnySky V3508 380KV (VERIFIED - GOOD ALTERNATIVE)
+================================================================================
+
+SOURCE: SunnySky USA official store (sunnyskyusa.com), himodel.com,
+        getfpv.com product listings.
+STATUS: VERIFIED from manufacturer data. Less independent test data
+        available compared to T-Motor.
+
+--- SPECIFICATIONS ---
+  KV Rating:            380 RPM/V
+  Weight:               97g (stated on official page)
+  Stator Diameter:      35mm
+  Rotor Diameter:       41.8mm
+  Stator Thickness:     8mm
+  Body Length:          20mm
+  Internal Resistance:  257 milliohm (HIGHER than T-Motor's 205m)
+  Max Continuous Current: 16A/30s (NOTE: 30-second rating, not 180s!)
+  Max Continuous Power:   400W
+  Idle Current:         0.3A @ 10V
+  LiPo Compatibility:   4-6S
+  Recommended ESC:      30A
+  Recommended Takeoff Wt: <=800g per motor
+
+--- MANUFACTURER THRUST DATA: 6S (22.2V) WITH CN15x5.5 PROPELLER ---
+
+  RPM:        5,463
+  Current:    13.4A
+  Thrust:     1,840g
+  Power:      297W
+  Efficiency: 6.19 g/W
+  Temperature: 115C after 1 minute (WARNING - see below)
+
+CONCERNS:
+  1. THERMAL: The manufacturer reports 115C after just 1 minute at
+     full throttle with CN15x5.5 props. This is VERY HOT and near the
+     limit of most magnet wire insulation (~155C for Class F). This
+     motor is running much hotter than the T-Motor at similar thrust.
+
+  2. CURRENT RATING: The 16A/30s rating means max current is only
+     sustainable for 30 seconds, NOT the 180 seconds (3 minutes)
+     that T-Motor rates. This is a significant difference for
+     sustained heavy-lift operations.
+
+  3. RESISTANCE: At 257 milliohm vs T-Motor's 205 milliohm, the
+     SunnySky has 25% higher internal resistance, meaning more heat
+     generation for the same current.
+
+  4. LESS INDEPENDENT DATA: While the manufacturer data looks good,
+     there are far fewer independent thrust bench tests published
+     compared to T-Motor.
+
+  5. PROP COMPATIBILITY: Uses CN15x5.5 (EOLO brand) propellers vs
+     T-Motor's own 15x5 CF props. Propeller availability may be
+     more limited.
+
+RELIABILITY:
+  - SunnySky is a well-regarded Chinese manufacturer
+  - Japanese EZO bearings (same as T-Motor)
+  - Each motor dynamically balanced, 3% performance tolerance
+  - Patented stepped/knurled design prevents loosening
+  - Used in many DIY builds, but less professional/commercial adoption
+
+VERDICT: GOOD alternative if T-Motor is unavailable or budget is tight.
+         The thermal concerns at max thrust are notable -- this motor
+         is working harder to achieve similar thrust. For a heavy-lift
+         application where you may hover at 55-60% throttle, thermals
+         should be manageable, but the margin is smaller.
+         Price: ~$25-35 USD each (cheaper than T-Motor).
+
+================================================================================
+MOTOR 3: GARTT ML3508 380KV (NOT VERIFIED - CONCERNS)
+================================================================================
+
+SOURCE: Multiple searches across AliExpress, Amazon, Alibaba, GARTT
+        official site (garttmodel.com), hobby retailer sites.
+STATUS: COULD NOT VERIFY. The GARTT ML3508 380KV may not exist as a
+        standard product.
+
+--- FINDINGS ---
+
+  After extensive searching, the GARTT ML3508 is widely available in:
+    - 700KV variant (for 3-4S, DJI E600 replacement)
+    - 580KV variant (for 4S applications)
+
+  The 380KV variant DOES NOT appear in standard GARTT product listings.
+  GARTT does make a ML4108 380KV (larger stator, 46mm diameter).
+
+  There IS a listing on AliExpress for "GARTT ML3508 370KV" (close to
+  380KV), which may be what was referenced. However:
+
+  GARTT ML3508 580KV specifications (for reference):
+    Motor KV:         580 RPM/V
+    Weight:           ~105g
+    Motor Resistance: 0.1098 ohm
+    Max Current:      25A
+    Max Power:        400W
+    Shaft Diameter:   3.175mm (SMALLER than T-Motor's 4mm!)
+    Max LiPo:        4S (NOT 6S rated!)
+    Idle Current:     0.4A/10V
+    Motor Diameter:   42mm
+
+  GARTT ML4108 380KV specifications:
+    Motor Resistance: 0.1932 ohm
+    Max Current:      18A
+    Max Power:        430W
+    Motor Diameter:   46mm
+    Idle Current:     0.4A/10V
+
+CONCERNS:
+  1. PRODUCT EXISTENCE: Cannot confirm ML3508 380KV exists as a
+     standard SKU from GARTT. May be a rebranded/relabeled motor.
+
+  2. NO THRUST DATA: Zero published thrust test data found for any
+     GARTT ML3508 at 380KV with 15" propellers on 6S.
+
+  3. SHAFT SIZE: The ML3508 580KV uses a 3.175mm shaft (1/8 inch),
+     which is SMALLER than the standard 4mm shaft on T-Motor/SunnySky.
+     A smaller shaft may not handle 15" prop loads as well.
+
+  4. VOLTAGE LIMIT: The ML3508 580KV is rated for 4S max. The 380KV
+     variant (if it exists) may or may not be rated for 6S.
+
+  5. QUALITY CONTROL: GARTT motors are significantly cheaper (~$15-20
+     each). Multiple Amazon reviews of GARTT ML3508 700KV motors
+     mention:
+     - Motor-to-motor inconsistency
+     - Bearing noise after moderate use
+     - Generally functional but noticeably lower quality than T-Motor
+
+VERDICT: NOT RECOMMENDED for safety-critical applications.
+         Cannot verify specifications. No thrust data available.
+         Unknown 6S compatibility. For a non-critical hobby build,
+         GARTT motors can work, but for carrying 3kg payloads where
+         motor failure means a crash, the risk is not justified when
+         T-Motor and SunnySky options exist.
+
+================================================================================
+MOTOR 4: BrotherHobby Avenger 3508 380KV (DOES NOT EXIST)
+================================================================================
+
+SOURCE: BrotherHobby official store (brotherhobbystore.com), getfpv.com,
+        racedayquads.com, pyrodrone.com, multiple retailer searches.
+STATUS: THIS PRODUCT DOES NOT EXIST.
+
+--- FINDINGS ---
+
+  BrotherHobby's Avenger series includes the following stator sizes:
+    - Avenger 2806.5 (1300KV, 1700KV)
+    - Avenger 2812 V3 (1115KV and other options)
+    - Avenger 3008 (1150KV, 1300KV, 1500KV, 1900KV)
+    - Avenger 3120 (500KV, 700KV)
+    - Avenger 4215 V5 (390KV, 435KV, 555KV)
+
+  There is NO "Avenger 3508" in BrotherHobby's product line. The
+  closest alternatives would be:
+    - Avenger 3120 700KV (30mm stator, not 35mm)
+    - Avenger 4215 390KV (larger 42mm stator, close KV, but much
+      bigger/heavier motor designed for 7-8" cinematography quads)
+
+VERDICT: DOES NOT EXIST. Cannot be evaluated. If a "BrotherHobby 3508"
+         is being sold somewhere, it is likely a counterfeit or
+         mislabeled product from a third-party seller.
+
+================================================================================
+SECTION: ALL-UP WEIGHT CALCULATION
+================================================================================
+
+Using the weight estimates from the original question, with corrections
+based on verified component weights:
+
+Component                           | Qty | Unit Wt (g) | Total (g)
+------------------------------------|-----|-------------|----------
+Frame (Tarot 680 PRO or similar)    |  1  |   1,200     |  1,200
+  NOTE: Your 1200g estimate is conservative. Tarot 680 PRO is ~780g.
+  Using 1200g as stated for a heavier/custom frame.
+Motors (T-Motor MN3508 380KV)       |  6  |    103      |    618
+  NOTE: Your estimate of 650g total is close (618g actual).
+ESCs (40A, e.g. T-Motor AIR 40A)    |  6  |     28      |    168
+  NOTE: Your 200g total estimate is reasonable (168g actual).
+FC + GPS (Pixhawk + M8N)            |  1  |     68      |     68
+  NOTE: Your 150g estimate is conservative (actual ~68g).
+Battery (6S 10000mAh)               |  1  |   1,350     |  1,350
+  NOTE: Your 800g estimate is SIGNIFICANTLY LOW. A 6S 10000mAh
+  LiPo typically weighs 1,100-1,400g. Using Tattu data: 1,350g.
+  A 6S 5000mAh would be ~730g, closer to your estimate.
+Servos (6x MG90S)                   |  6  |     14      |     84
+  NOTE: Your 90g estimate is close (84g actual).
+Payload                             |  1  |   3,000     |  3,000
+Misc wiring, connectors, PDB, BEC   |  1  |    300      |    300
+Props (15x5 CF)                     |  6  |     27      |    162
+Landing gear (if separate)          |  1  |      0      |      0
+  (Included in frame weight for Tarot 680 PRO)
+Servo mounting hardware             |  6  |     15      |     90
+                                    |     |             |---------
+TOTAL (with your 1200g frame):                          |  7,040g
+
+TOTAL (with Tarot 680 PRO 780g frame):                  |  6,620g
+
+--- YOUR ORIGINAL ESTIMATE vs CORRECTED ---
+
+  Your estimate:     ~6,390g
+    (1200+650+200+150+800+90+3000+300)
+
+  Major correction:  Battery weight. Your 800g estimate only works for
+    a 6S 5000mAh battery (~730g). A 10000mAh 6S weighs ~1,350g.
+
+  Corrected with 10Ah battery:  ~7,040g  (with 1200g frame)
+  Corrected with 5Ah battery:   ~5,690g  (with 1200g frame)
+  Corrected with 10Ah + 780g frame: ~6,620g
+
+  RECOMMENDATION: Use the 780g Tarot 680 PRO frame weight for
+  calculation, but ADD a 10-15% contingency for unforeseen additions.
+
+  Working estimate: 6,620g + 10% contingency = ~7,280g
+
+================================================================================
+SECTION: THRUST-TO-WEIGHT ANALYSIS
+================================================================================
+
+Using T-Motor MN3508 380KV with 15x5 CF props on 6S:
+  Max thrust per motor: 1,880g
+  Total hex thrust (6 motors): 11,280g (11.28 kg)
+
+--- SCENARIO TABLE ---
+
+  Scenario                    | AUW (g) | Max Thrust | TWR   | Hover % | SAFE?
+  ----------------------------|---------|------------|-------|---------|------
+  Your original estimate      | 6,390   | 11,280     | 1.77  | ~57%    | MARGINAL
+  With 10Ah batt, 1200g frame | 7,040   | 11,280     | 1.60  | ~62%    | MARGINAL
+  With 10Ah batt, 780g frame  | 6,620   | 11,280     | 1.70  | ~59%    | MARGINAL
+  With 10% contingency        | 7,280   | 11,280     | 1.55  | ~65%    | MARGINAL
+  With 5Ah batt, 1200g frame  | 5,690   | 11,280     | 1.98  | ~50%    | OK
+  With 5Ah batt, 780g frame   | 5,270   | 11,280     | 2.14  | ~47%    | GOOD
+  Half payload (1.5kg), 10Ah  | 5,120   | 11,280     | 2.20  | ~45%    | GOOD
+  No payload, 10Ah, 780g frm  | 3,620   | 11,280     | 3.12  | ~32%    | EXCELLENT
+
+--- SAFETY ASSESSMENT ---
+
+  YOUR MINIMUM REQUIREMENT: 1.5:1 TWR
+  YOUR TARGET: 1.7:1 TWR
+
+  With the most conservative estimate (7,280g AUW with contingency):
+    TWR = 1.55:1  --> BARELY meets your 1.5:1 minimum
+    Hover at ~65% throttle --> limited headroom for maneuvers
+    NOT recommended for windy conditions
+
+  With realistic estimate (6,620g with Tarot 680):
+    TWR = 1.70:1  --> EXACTLY meets your 1.7:1 target
+    Hover at ~59% throttle --> acceptable for calm conditions
+    Wind tolerance: ~15 km/h max
+
+  INDUSTRY STANDARD RECOMMENDATIONS:
+    - ArduPilot community: 2:1 MINIMUM, 3:1 preferred
+    - Tyto Robotics drone design guide: 2:1 minimum
+    - One ArduPilot expert quote: "2:1 is the minimum"
+    - Below 2:1, PID control loops lose precision at low throttle
+    - Below 1.5:1, the drone may struggle to maintain altitude
+      in gusts and has essentially zero climb authority when loaded
+
+CRITICAL FINDING:
+  The 3508 380KV motors at 1,880g thrust each are MARGINAL for your
+  application. They technically meet your stated requirements (1.5-1.7:1)
+  but fall SHORT of industry-recommended minimums (2:1).
+
+  The hover throttle of 59-65% means:
+    - 35-41% throttle headroom for climbing, wind compensation
+    - In a gust, the drone may need 80%+ throttle momentarily
+    - If one motor fails on a hex, remaining 5 motors need ~20% more
+      thrust each -- at 65% hover, that pushes to ~78% per motor
+    - Battery voltage sag under load further reduces available thrust
+    - Propeller efficiency drops at high throttle percentages
+
+================================================================================
+SECTION: UPGRADE OPTIONS FOR BETTER SAFETY MARGIN
+================================================================================
+
+If 3508 380KV is truly marginal, here are verified upgrade paths:
+
+--- OPTION A: T-Motor MN3510 360KV (STEP UP - MODEST IMPROVEMENT) ---
+
+  Weight: 97g (no cables), 117-119g (with cables)
+  Max Thrust (15x5 CF, 6S): 1,900g @ 12.5A
+  Max Continuous Current: 15A (180s)
+  Max Power: 330W
+  Efficiency at max: 6.85 g/W
+
+  6-motor total thrust: 11,400g
+  TWR at 6,620g AUW: 1.72:1  (minimal improvement over MN3508)
+
+  VERDICT: Only ~20g more thrust per motor. NOT worth the upgrade
+  cost for such a small gain. Same class of motor with slightly
+  taller stator (10mm vs 8mm).
+
+--- OPTION B: T-Motor MN4012 400KV (SIGNIFICANT UPGRADE) ---
+
+  Weight: 134g (no cables), 155g (with cables)
+  Max Thrust (15x5 CF, 6S): 2,370g @ 16.2A
+  Max Thrust (16x5.4 CF, 6S): 3,020g @ 22.5A
+  Max Continuous Current: 25A (180s)
+  Max Power: 750W
+  Internal Resistance: 67 milliohm (MUCH lower than MN3508's 205m)
+  Configuration: 18N24P
+  Dimensions: 44.7mm dia x 34.5mm
+  MTBF: ~1000 hours
+
+  6-motor total thrust (15x5): 14,220g
+  6-motor total thrust (16x5.4): 18,120g
+
+  Weight penalty: 6 x (155-103) = +312g total (extra motor weight)
+  Adjusted AUW: 6,620 + 312 = 6,932g
+
+  TWR at 6,932g (15x5 props): 14,220 / 6,932 = 2.05:1  MEETS 2:1!
+  TWR at 6,932g (16x5.4 props): 18,120 / 6,932 = 2.61:1  EXCELLENT!
+
+  VERDICT: STRONGLY RECOMMENDED for safety-critical applications.
+  The MN4012 provides genuine 2:1+ TWR with 15" props, and an
+  outstanding 2.6:1 with 16" props. The weight penalty is modest
+  (312g for all 6 motors). Requires 30A ESCs instead of 40A.
+  Needs a frame that can accommodate 15-16" propellers.
+  Price: ~$55-75 USD each (more expensive but justified for safety).
+
+--- OPTION C: T-Motor MN4014 400KV (MAXIMUM SAFETY) ---
+
+  Max Thrust (15x5 CF, 6S): ~2,620g
+  Max Thrust (16x5.4 CF, 6S): ~3,020g+
+  Weight: ~171g (with cables)
+
+  6-motor total thrust: 15,720g - 18,120g
+  Even with heavier frame (Tarot 960, ~1,200g), TWR would be 2.0-2.3:1
+
+  VERDICT: Overkill for 3kg payload unless you want maximum safety
+  margin. Consider if budget allows and frame supports 16" props.
+
+--- OPTION D: Use 14x4.8 Props Instead of 15x5 (DOWNGRADE PROPS) ---
+
+  If frame geometry limits you to 14" propellers:
+  T-Motor MN3508 380KV with 14x4.8 CF on 6S: 1,730g max thrust
+  6-motor total: 10,380g
+  TWR at 6,620g: 1.57:1  (WORSE - barely meets minimum)
+
+  VERDICT: If using 14" props, you MUST upgrade to MN4012 class motors.
+
+================================================================================
+SECTION: FINAL RECOMMENDATION
+================================================================================
+
+--- FOR YOUR STATED 1.5:1 MINIMUM / 1.7:1 TARGET ---
+
+  The T-Motor MN3508 380KV with 15x5 CF propellers on 6S DOES meet
+  your stated requirements, achieving 1.70:1 TWR with a Tarot 680 Pro
+  frame and realistic weight estimates. However:
+
+  1. This is EXACTLY at your target with ZERO margin for error.
+  2. Add a slightly heavier battery or unexpected wiring weight and
+     you drop below 1.7:1.
+  3. Industry consensus is that 2:1 is the TRUE minimum for safe,
+     controllable flight with a payload.
+  4. Battery voltage sag (6S starts at 25.2V, nominal 22.2V, low
+     at 21.0V) means thrust drops ~10-15% from published data
+     at the end of flight.
+
+--- IF THIS IS TRULY SAFETY-CRITICAL, MY RECOMMENDATION IS: ---
+
+  PRIMARY: T-Motor MN4012 400KV
+    - 6 motors x 2,370g = 14,220g total thrust (15" props)
+    - AUW ~6,932g with 10Ah battery
+    - TWR = 2.05:1 (with 15" props)
+    - TWR = 2.61:1 (with 16" props)
+    - Genuine safety margin for wind, voltage sag, and motor failure
+    - 155g per motor, 30A ESCs required
+    - Additional cost: ~$60-120 total over MN3508 option
+
+  FALLBACK: T-Motor MN3508 380KV
+    - Acceptable if budget is constrained AND you:
+      a) Use the lighter 5Ah battery (TWR = 2.14:1 with 780g frame)
+      b) Limit payload to 2.5kg instead of 3kg
+      c) Only fly in calm conditions (<15 km/h wind)
+      d) Accept reduced mission time with lighter battery
+
+  AVOID: GARTT ML3508 (unverified, quality concerns)
+  AVOID: BrotherHobby Avenger 3508 (does not exist)
+  ACCEPTABLE: SunnySky V3508 380KV (verified thrust, thermal concerns,
+              use only if T-Motor unavailable)
+
+--- MOTOR COMPARISON SUMMARY ---
+
+  Motor              | Max Thrust | Weight | TWR @ 6.6kg | Verified? | Rec?
+  -------------------|-----------|--------|-------------|-----------|------
+  T-Motor MN3508 380 |  1,880g   |  103g  |   1.70:1    |    YES    | OK*
+  SunnySky V3508 380 |  1,840g   |   97g  |   1.67:1    |   PARTIAL | OK*
+  GARTT ML3508 380   |  ???g     |  ???g  |    ???      |    NO     | NO
+  BrotherHobby 3508  |  N/A      |  N/A   |    N/A      | NOT REAL  | NO
+  T-Motor MN3510 360 |  1,900g   |  119g  |   1.68:1    |    YES    | NO**
+  T-Motor MN4012 400 |  2,370g   |  155g  |   2.05:1    |    YES    | BEST
+  T-Motor MN4014 400 |  2,620g   |  171g  |   2.17:1    |    YES    | GREAT
+
+  * = Meets stated requirements but falls below industry-standard 2:1
+  ** = Negligible improvement over MN3508, not worth the cost
+
+================================================================================
+SECTION: SOURCES AND REFERENCES
+================================================================================
+
+T-Motor MN3508 380KV (Official):
+  https://store.tmotor.com/product/mn3508-motor-navigator-type.html
+  https://store.tmotor.com/goods-354-MN3508+KV380.html
+
+T-Motor MN3510 360KV (Official):
+  https://store.tmotor.com/product/mn3510-motor-navigator-type.html
+
+T-Motor MN4012 400KV (Official):
+  https://store.tmotor.com/product/mn4012-kv400-motor-navigator-type.html
+
+T-Motor MN4014 KV400 (Official):
+  https://store.tmotor.com/product/mn4014-kv400-motor-navigator-type.html
+
+SunnySky V3508 380KV (Official):
+  https://sunnyskyusa.com/products/sunnysky-v3508-motor
+  https://www.himodel.com/electric/SUNNYSKY_V3508_380KV_Outrunner_Brushless_Motor_for_Multi-rotor_Aircraft.html
+
+SunnySky X4108S 380KV (Alternative):
+  https://www.himodel.com/electric/SUNNYSKY_X4108S_380KV_Outrunner_Brushless_Motor_for_Multi-rotor_Aircraft.html
+
+T-Motor MN3508 Test Data (Academic):
+  https://www.researchgate.net/figure/Product-specification-and-experimental-test-data-of-T-MOTOR-MN3508-KV380-23_fig3_335258762
+
+T-Motor MN3508 (Independent Retailer):
+  https://brushlessmotorsparade.com/brushless-motor/t-motor-mn3508-380kv
+  https://www.electricwingman.com/tiger-motor-mn3508-29.aspx
+
+RCGroups Discussion:
+  https://www.rcgroups.com/forums/showthread.php?2229039-T-Motor-MN3508-KV380
+
+ArduPilot Thrust-to-Weight Discussion:
+  https://discuss.ardupilot.org/t/for-self-build-drone-what-is-the-ideal-thrust-power-of-each-rotor-motor-vs-weight/91048
+
+DIY Drones Heavy Lift Discussion:
+  https://diydrones.com/forum/topics/how-to-go-about-designing-a-heavy-lift-3kg-payload-multirotor
+
+GARTT Motor Listings (for verification):
+  https://www.alibaba.com/product-detail/GARTT-ML-3508-580KV-4S-400W_1600394964560.html
+  https://www.amazon.com/GARTT-Brushless-Multirotor-Quadcopter-Hexrcopter/dp/B06W9HHDZW
+
+BrotherHobby Avenger Series (product line verification):
+  https://www.brotherhobbystore.com/avenger-series-c0378
+
+Thrust-to-Weight Industry Standards:
+  https://www.tytorobotics.com/blogs/articles/the-drone-design-loop-for-brushless-motors-and-propellers
+  https://www.unmannedsystemstechnology.com/feature/calculating-how-much-weight-a-drone-can-carry/
+
+4108 380KV Alternative Motors:
+  https://en.aliradar.com/item/32241334076-6PCS-GARTT-ML-4108-380KV-Brushless-Motor-For-Multi-rotor-Quadcopter-Hexacopter-RC-Drone
+  https://www.amazon.com/Brushless-Torque-Payload-Photography-Support/dp/B0FBRFQWKF
+
+eCalc Multirotor Calculator:
+  https://www.ecalc.ch/xcoptercalc.php
+
+================================================================================
+END OF REPORT
+================================================================================
